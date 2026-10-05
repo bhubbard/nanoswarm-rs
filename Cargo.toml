@@ -1,0 +1,38 @@
+[package]
+name = "nanoswarm-rs"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.80"
+authors = ["Brandon Hubbard"]
+license = "MIT"
+description = "100% on-device autonomous AI agent swarm in native Rust for Apple Silicon"
+repository = "https://github.com/bhubbard/nanoswarm-rs"
+
+[lib]
+name = "nanoswarm"
+path = "src/lib.rs"
+
+[[bin]]
+name = "nanoswarm"
+path = "src/bin/main.rs"
+
+[dependencies]
+apfel = { package = "apfel-rs", path = "../apfel-rs" }
+zev = { package = "zev-rs", path = "../zev-rs" }
+tokio = { version = "1.40", features = ["full"] }
+clap = { version = "4.5", features = ["derive", "env"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+colored = "2.1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+anyhow = "1.0"
+thiserror = "1.0"
+async-trait = "0.1"
+futures = "0.3"
+walkdir = "2.5"
+regex = "1.10"
+chrono = { version = "0.4", features = ["serde"] }
+
+[dev-dependencies]
+tempfile = "3.10"
